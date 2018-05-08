@@ -1,2 +1,3 @@
-# glue-example-data
-Example datasets to use with glue
+### Example datasets to use with glue
+
+Datasets are described in a ``README.md`` file inside each folder.
