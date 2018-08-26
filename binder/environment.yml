@@ -6,7 +6,7 @@ dependencies:
   - pip:
     - jupyterlab ==0.34
     - notebook >=5.5
-    - ipywidgets
+    - ipywidgets ==7.4.0
     - ipympl
     - pythreejs
     - https://github.com/glue-viz/glue/archive/master.zip
