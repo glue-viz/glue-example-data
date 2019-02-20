@@ -1,1 +1,1 @@
-git+https://github.com/glue-viz/glue-jupyter.git
+git+https://github.com/glue-viz/glue-jupyter.git@75c7773f
