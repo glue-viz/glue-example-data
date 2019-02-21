@@ -32,17 +32,21 @@ USER ${NB_USER}
 
 # Install requirements
 
-ENV PATH="${HOME}/.local/bin:${PATH}"
 RUN pip install -r ${HOME}/binder/requirements.txt --user
 
 # Install Jupyter Lab
 
 RUN pip install jupyterlab --user
 
-# Update Jupyter config path
+# Update variables to point to local install
 
+ENV PATH="${HOME}/.local/bin:${PATH}"
 ENV JUPYTER_CONFIG_DIR=$HOME/.local/etc/jupyter/
 
 # Change working directory
 
 WORKDIR ${HOME}
+
+# Install Jupyter Lab widgets extension
+
+RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager
