@@ -39,6 +39,10 @@ RUN pip install -r ${HOME}/binder/requirements.txt --user
 
 RUN pip install jupyterlab --user
 
+# Update Jupyter config path
+
+ENV JUPYTER_CONFIG_DIR=$HOME/.local/etc/jupyter/
+
 # Change working directory
 
 WORKDIR ${HOME}
