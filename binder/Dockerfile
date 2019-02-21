@@ -9,7 +9,7 @@ FROM ubuntu:18.04
 # Set up Python 3.6
 
 RUN apt update
-RUN apt install -y python3 python3-pip python3-setuptools git nodejs npm --no-install-recommends
+RUN apt install -y python3 python3-pip git nodejs npm
 RUN pip3 install --upgrade pip
 
 # Set up user as required by mybinder docs:
@@ -32,4 +32,13 @@ USER ${NB_USER}
 
 # Install requirements
 
+ENV PATH="${HOME}/.local/bin:${PATH}"
 RUN pip install -r ${HOME}/binder/requirements.txt --user
+
+# Install Jupyter Lab
+
+RUN pip install jupyterlab --user
+
+# Change working directory
+
+WORKDIR ${HOME}
